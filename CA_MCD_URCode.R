@@ -20,16 +20,6 @@ library(viridis)
 #Link to file with database password
 source("credentials.R")
 
-
-# tell DBI which driver to use
-pgSQL <- dbDriver("PostgreSQL")
-# establish the connection
-DRCcon<-dbConnect(pgSQL, host='drc.iath.virginia.edu', port='5432',
-                  dbname='daacs-production',
-                  user='drcquery', password='!queryacct!')
-
-
-
 #### 1. get the table with the ware type date ranges ####
 # get the table with the ware type date ranges
 MCDTypeTable<- dbGetQuery(DRCcon,'
